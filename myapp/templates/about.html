@@ -1,0 +1,40 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>About Us | My Website</title>
+		<link
+			rel="stylesheet"
+			href="{% static 'style.css' %}"
+		/>
+	</head>
+	<body>
+		<nav>
+			<div class="logo">Brand</div>
+			<ul>
+				<li><a href="{% url 'home' %}">Home</a></li>
+				<li>
+					<a
+						href="{% url 'about' %}"
+						class="active"
+						>About</a
+					>
+				</li>
+				<li><a href="{% url 'contact' %}">Contact</a></li>
+			</ul>
+		</nav>
+
+		<section class="content">
+			<h2>About Us</h2>
+			<p>
+				We are a dedicated team of creators focused on quality and innovation.
+				Our journey started with a simple idea: make things better.
+			</p>
+		</section>
+	</body>
+</html>

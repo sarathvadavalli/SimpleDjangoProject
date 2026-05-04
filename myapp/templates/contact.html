@@ -1,0 +1,66 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Contact Us | My Website</title>
+		<link
+			rel="stylesheet"
+			href="{% static 'style.css' %}"
+		/>
+	</head>
+	<body>
+		<nav>
+			<div class="logo">Brand</div>
+			<ul>
+				<li><a href="{% url 'home' %}">Home</a></li>
+				<li><a href="{% url 'about' %}">About</a></li>
+				<li>
+					<a
+						href="{% url 'contact' %}"
+						class="active"
+						>Contact</a
+					>
+				</li>
+			</ul>
+		</nav>
+
+		<section class="content">
+			<h2>Contact Us</h2>
+			<form
+				class="contact-form"
+				action="{% url 'contact' %}"
+				method="POST"
+			>
+				{% csrf_token %}
+				<input
+					type="text"
+					placeholder="Your Name"
+					name="name"
+					required
+				/>
+				<input
+					type="email"
+					placeholder="Your Email"
+					name="email"
+					required
+				/>
+				<textarea
+					placeholder="Your Message"
+					name="message"
+					rows="5"
+				></textarea>
+				<button
+					type="submit"
+					class="btn btn-primary"
+				>
+					Send Message
+				</button>
+			</form>
+		</section>
+	</body>
+</html>
