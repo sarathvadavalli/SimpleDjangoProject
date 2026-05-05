@@ -1,15 +1,19 @@
 {
-	"version": 2,
-	"builds": [
-		{
-			"src": "SampleDjango/wsgi.py",
-			"use": "@vercel/python"
-		}
-	],
-	"routes": [
-		{
-			"src": "/(.*)",
-			"dest": "SampleDjango/wsgi.py"
-		}
-	]
+  "version": 2,
+  "builds": [
+    {
+      "src": "SampleDjango/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "SampleDjango/wsgi.py"
+    }
+  ]
 }
